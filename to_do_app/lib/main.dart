@@ -5,6 +5,7 @@ import 'package:project_1/provider/crud_provider.dart';
 import 'package:project_1/task_detail.dart';
 import 'package:project_1/todo.dart';
 import 'package:provider/provider.dart';
+import 'signin_page.dart';
 
 void main() {
   runApp(
@@ -16,7 +17,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,19 +28,30 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: SignInPage(), // Show the sign-in page as the initial page
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: HomeContent(),
+    );
+  }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class HomeContent extends StatefulWidget {
+  const HomeContent({Key? key}) : super(key: key);
+
+  @override
+  _HomeContentState createState() => _HomeContentState();
+}
+
+class _HomeContentState extends State<HomeContent> {
   int currentPage = 0;
   List<Widget> pages = const [
     FirstPage(),
@@ -47,7 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
     CreateTask(),
     TaskDetail(),
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
