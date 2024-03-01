@@ -225,12 +225,12 @@ class BookInfo extends StatelessWidget {
                       radius: 35,
                       backgroundImage: Image.asset('assets/pp.jpg').image,
                     ),
-                    title: const Text('Nathaniel Abayneh'),
+                    title: const Text('Samiya Yusuf'),
                     subtitle: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('this book is awesome💖'),
+                        Text('this book is amazing'),
                         Text('Dec 31, 2023'),
                       ],
                     ),
